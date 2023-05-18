@@ -1,7 +1,7 @@
 BINARY=hello
-APP=$(shell basename $(shell git remote get-url origin))
+PROJECT=spiritant/makefile
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-REGISTRY=spiritant
+REGISTRY=gcr.io
 TARGETOS=linux #linux #windows or #macos
 
 linux:
@@ -16,10 +16,11 @@ macos:
 build: linux windows macos
 
 image:
-	docker build --build-arg MY_ARCH=${TARGETOS} -t ${REGISTRY}/${APP}:${VERSION}-${TARGETOS} .
+	docker build --build-arg MY_ARCH=${TARGETOS} -t ${REGISTRY}/${PROJECT}:${VERSION}-${TARGETOS} .
 
 push:
-	docker push ${REGISTRY}/${APP}:${VERSION}
+	docker push ${REGISTRY}/${PROJECT}:${VERSION}-${TARGETOS}
 
 clean: 
-	docker rmi -f $(docker image list --format "table {{.CreatedAt}}\t{{.ID}}" | sort -n | tail -n 1 |  awk '{ print $5 }')
+	docker image list --format "table {{.CreatedAt}}\t{{.ID}}" | sort -n | tail -n 1 |  awk '{ print $$5 }' | xargs docker rmi -f 
+	
