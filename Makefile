@@ -1,6 +1,6 @@
 BINARY=hello
 PROJECT=spiritant/makefile
-VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
+VERSION=$(shell git rev-parse --short HEAD)
 REGISTRY=gcr.io
 TARGETOS=linux #linux #windows or #macos
 
