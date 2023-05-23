@@ -1,4 +1,4 @@
-
+![Image](/minikube2.png)
 ![Image](/minikube.png)
 
 |          | Advantages and disadvantages                                                                                                                                                                                                                                                                                                                                                                                                                                          | Сharacteristics                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
