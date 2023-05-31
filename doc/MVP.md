@@ -19,6 +19,6 @@ sudo kubectl get cm argocd-cm -n argocd -oyaml
 
 sudo kubectl patch cm argocd-cm -n argocd -p '{"data":{"timeout.reconciliation":"30s"}}'
 
-DEMO VIDEO
+## DEMO VIDEO
 
 ![Alt Text](https://github.com/spiritantgit/asciiartify/blob/main/demosync.gif)
