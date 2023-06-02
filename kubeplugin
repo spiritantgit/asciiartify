@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# HOW TO USE
+# ADD kubeplugin to plugins 
+
+#sudo chmod +x ./kubeplugin
+#sudo sudo cp -p ./kubeplugin /usr/bin/kubectl-kubeplugin
+#kubectl kubeplugin top pods kube-system
+
 # Define command-line arguments
 
 RESOURCE_TYPE=$2
